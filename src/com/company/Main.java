@@ -47,7 +47,7 @@ public class Main {
             int result = solution1.calc(num1, num2, op);
             System.out.println("Output: " + result);
 
-        } else if (c == true && d == true)
+        } else if (c && d)
         {
             char op = myArray[1].charAt(0);
 
@@ -56,11 +56,15 @@ public class Main {
             int result2 = romanToArabic1.romanToArabic(myArray[2]);
             Solution solution1 = new Solution();
             int result3 = solution1.calc(result1, result2, op);
+            if (result3<=0){
+                System.out.println("Result of operation with roman numbers must be grater than Zero");
+                System.exit(0);
+            }
 
             ArabicToRoman arabicToRoman1 = new ArabicToRoman();
             String result = arabicToRoman1.arabicToRoman(result3);
 
-            System.out.println("Input: " + result );
+            System.out.println("output: " + result );
 
         } else{
             System.err.println("Попробуй еще раз");
